@@ -39,4 +39,31 @@ let as = `(${defaultResult} + 10) * 3 / 2 - 1`;
 // let error = "An error \""+"\\occured"
 // let as = '"(" + defaultResult + " + 10) * 3 / 2 - 1"';
 
+// variables should be initialized before using but function need not.
+// global can be accessed in function but local which are inside cannot be outside
+// When referring to currentResult inside of the add function we now always refer to the local, shadowed variable.
+// Only if no such local variable existed, JavaScript would fall back to the global variable.
+// function add(num1, num2) {
+//   let currentResult = 0;
+//   const result = num1 + num2;
+
+//   return result;
+//   //   code written after return doesn't work
+//   alert("The result is " + result);
+//   return 1;
+// }
+
+// currentResult = add(1, 2);
+// // can pass one as well no error
+// add(1);
+
+function add() {
+  currentResult = currentResult + userInput.value;
+  outputResult(currentResult, as);
+}
+
+// to this function we just pass the address of function and if we do add() then it is executed immedeately
+addBtn.addEventListener("click", add);
+
+// this executes initially but above one on button click so move it to function
 outputResult(currentResult, as);

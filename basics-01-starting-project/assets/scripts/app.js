@@ -16,12 +16,27 @@
 // user-nam
 // let
 
-let currentResult = 0;
+const defaultResult = 0;
+
+let currentResult = defaultResult;
 currentResult = ((currentResult + 10) * 3) / 2 - 1;
 
 // can be any of theses
-let as = "(" + currentResult + " + 10) * 3 / 2 - 1";
-// as = 'eh';
-// as = `eh`;
+// let as = "(" + defaultResult + " + 10) * 3 / 2 - 1";
+// template literal
+let as = `(${defaultResult} + 10) * 3 / 2 - 1`;
+// can add line breaks
+// as = `A
+
+// C
+// B`
+// let as = `(${0 + 0} + 10) * 3 / 2 - 1`;
+
+// line breaks for normal also known as escpae character
+// let error = "An error \n"
+// +"occured"
+
+// let error = "An error \""+"\\occured"
+// let as = '"(" + defaultResult + " + 10) * 3 / 2 - 1"';
 
 outputResult(currentResult, as);

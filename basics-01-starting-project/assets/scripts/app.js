@@ -17,6 +17,11 @@
 // let
 
 let currentResult = 0;
-currentResult = (currentResult + 10)*3/2-1;
+currentResult = ((currentResult + 10) * 3) / 2 - 1;
 
-outputResult(currentResult, 'eh');
+// can be any of theses
+let as = "(" + currentResult + " + 10) * 3 / 2 - 1";
+// as = 'eh';
+// as = `eh`;
+
+outputResult(currentResult, as);

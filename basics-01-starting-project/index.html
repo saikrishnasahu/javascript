@@ -10,11 +10,15 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/styles/app.css" />
-    <!-- loads later -->
+    <!-- loads html later -->
     <!-- <script src="assets/scripts/app.js">
       // Can be added here as well or src
       // alert('This Works from html!!');
     </script> -->
+    <!-- with defer it starts downloading js and then waits until html is loaded -->
+    <!-- with async it downloads and executes immediately even though html is not parsed -->
+    <script src="assets/scripts/vendor.js" defer></script>
+    <script src="assets/scripts/app.js" defer></script>
   </head>
   <body>
     <header>
@@ -34,8 +38,8 @@
       <h2 id="current-calculation">0</h2>
       <h2>Result: <span id="current-result">0</span></h2>
     </section>
-    <!-- loads first -->
-    <script src="assets/scripts/vendor.js"></script>
-    <script src="assets/scripts/app.js"></script>
+    <!-- loads html first and then js which takes a lot of time-->
+    <!-- <script src="assets/scripts/vendor.js"></script>
+    <script src="assets/scripts/app.js"></script> -->
   </body>
 </html>
